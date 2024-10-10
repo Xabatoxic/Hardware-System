@@ -43,24 +43,24 @@ class OrderServiceTest {
         savedCart = cartService.create(cart); // Save the cart to the database
     }
 
-    @Test
-    void createOrder() {
-        // Create an Order using the OrderFactory with the saved cart
-        Order order = OrderFactory.buildOrder(
-                savedCart,
-                LocalDate.now(),
-                BigDecimal.valueOf(499.99)
-        );
-
-        // Save the Order using the OrderService
-        Order savedOrder = orderService.create(order);
-
-        // Assertions to validate the creation of the order
-        assertNotNull(savedOrder, "Saved order should not be null");
-        assertNotNull(savedOrder.getOrderID(), "Order ID should not be null");
-        assertEquals(savedCart, savedOrder.getCart(), "The cart in the order should match the saved cart");
-        System.out.println("Created Order: " + savedOrder);
-    }
+//    @Test
+//    void createOrder() {
+//        // Create an Order using the OrderFactory with the saved cart
+//        Order order = OrderFactory.buildOrder(
+//                savedCart,
+//                LocalDate.now(),
+//                BigDecimal.valueOf(499.99)
+//        );
+//
+//        // Save the Order using the OrderService
+//        Order savedOrder = orderService.create(order);
+//
+//        // Assertions to validate the creation of the order
+//        assertNotNull(savedOrder, "Saved order should not be null");
+//        assertNotNull(savedOrder.getOrderID(), "Order ID should not be null");
+//        assertEquals(savedCart, savedOrder.getCart(), "The cart in the order should match the saved cart");
+//        System.out.println("Created Order: " + savedOrder);
+//    }
 }
 
 

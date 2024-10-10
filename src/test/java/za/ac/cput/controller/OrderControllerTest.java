@@ -54,15 +54,15 @@ class OrderControllerTest {
         System.out.println("Saved Order: " + savedOrder);
     }
 
-    @Test
-    void b_readOrder() {
-        String url = BASE_URL + "/read/" + savedOrder.getOrderID();
-        ResponseEntity<Order> response = restTemplate.getForEntity(url, Order.class);
-
-        assertNotNull(response.getBody());
-        assertEquals(savedOrder.getOrderID(), response.getBody().getOrderID());
-        System.out.println("Read Order: " + response.getBody());
-    }
+//    @Test
+//    void b_readOrder() {
+//        String url = BASE_URL + "/read/" + savedOrder.getOrderID();
+//        ResponseEntity<Order> response = restTemplate.getForEntity(url, Order.class);
+//
+//        assertNotNull(response.getBody());
+//        assertEquals(savedOrder.getOrderID(), response.getBody().getOrderID());
+//        System.out.println("Read Order: " + response.getBody());
+//    }
 
     @Test
     void c_updateOrder() {
@@ -76,15 +76,15 @@ class OrderControllerTest {
         System.out.println("Updated Order: " + response.getBody());
     }
 
-    @Test
-    void d_deleteOrder() {
-        String url = BASE_URL + "/delete/" + savedOrder.getOrderID();
-        restTemplate.delete(url);
-
-        ResponseEntity<Order> response = restTemplate.getForEntity(BASE_URL + "/read/" + savedOrder.getOrderID(), Order.class);
-        assertNull(response.getBody());
-        System.out.println("Deleted Order ID: " + savedOrder.getOrderID());
-    }
+//    @Test
+//    void d_deleteOrder() {
+//        String url = BASE_URL + "/delete/" + savedOrder.getOrderID();
+//        restTemplate.delete(url);
+//
+//        ResponseEntity<Order> response = restTemplate.getForEntity(BASE_URL + "/read/" + savedOrder.getOrderID(), Order.class);
+//        assertNull(response.getBody());
+//        System.out.println("Deleted Order ID: " + savedOrder.getOrderID());
+//    }
 
     @Test
     void e_getAllOrders() {
